@@ -1,0 +1,40 @@
+<div *ngIf="customer" class="bg">
+  <h2 class="hero-head">{{ customer.name }}</h2>
+  <div class="form">
+    <div>
+      <label for="">Name</label>
+      <input [(ngModel)]="customer.name" placeholder="Name" />
+    </div>
+    <div>
+      <label for="">First name:</label>
+      <input [(ngModel)]="customer.firstName" placeholder="First Name" />
+    </div>
+    <div>
+      <label for="">Last name:</label>
+      <input [(ngModel)]="customer.lastName" placeholder="Last Name" />
+    </div>
+    <div>
+      <label for="">Place holder</label>
+      <input [(ngModel)]="customer.place" placeholder="Place" />
+    </div>
+    <div class="btn">
+      <button (click)="updateHero(customer)" *ngIf="customer.id" class="btn--save">
+        Save
+      </button>
+      <button
+        (click)="deleteHero(customer)"
+        *ngIf="customer.id"
+        class="btn--delete"
+      >
+        Delete
+      </button>
+      <button
+        (click)="createHero(customer)"
+        *ngIf="!customer.id"
+        class="btn--create"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</div>
